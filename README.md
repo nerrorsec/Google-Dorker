@@ -17,3 +17,6 @@ It simply looks for,
 #1> pip install -r requirements
 
 #2> python3 GoogleDorker.py
+
+# Note
+Constant use of this tool in very short interval of time can make it to fail for a short period of time.
