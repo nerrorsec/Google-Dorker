@@ -19,4 +19,6 @@ It simply looks for,
 #2> python3 GoogleDorker.py (This tool is strictly made with python3)
 
 # Note
-Constant use of this tool in very short interval of time can make it to fail for a short period of time.
+> If you think I am missing something, I accept feedback and comments.
+> Constant use of this tool in very short interval of time can make it to fail for a short period of time.
+> The code is not refactored.
