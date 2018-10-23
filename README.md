@@ -16,7 +16,7 @@ It simply looks for,
 # Usage
 #1> pip install -r requirements
 
-#2> python3 GoogleDorker.py (This tool is strictly made with python3)
+#2> python3 GoogleDorker.py (This tool is strictly made in python3)
 
 # Note
 > If you think I am missing something, I accept feedback and comments.
