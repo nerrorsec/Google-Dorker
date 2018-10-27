@@ -20,7 +20,7 @@ It simply looks for,
 
 # Note
 1) If you think I am missing something, please send me feedbacks and comments.
-2) Constant use of this tool in very short interval of time can make it to fail for a short period of time.
+2) Constant use of this tool in very short interval of time can make it to fail for a short period of time.(Talking about Google Captcha)
 3) The code is not refactored.
 
 # Find me
