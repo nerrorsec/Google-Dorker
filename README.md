@@ -25,4 +25,4 @@ It simply looks for,
 
 # Find me
 <a href="https://fb.com/nErrorDreamer">Facebook</a>
-<a href="https://fb.com/nErrorDreamer">Twitter</a>
+<a href="https://twitter.com/nErrorDreamer">Twitter</a>
