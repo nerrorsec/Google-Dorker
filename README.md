@@ -24,5 +24,5 @@ It simply looks for,
 3) The code is not refactored.
 
 # Find me
-<a href="https://fb.com/nErrorDreamer">nErrorDreamer</a>
- 
+<a href="https://fb.com/nErrorDreamer">Facebook</a>
+<a href="https://fb.com/nErrorDreamer">Twitter</a>
