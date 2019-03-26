@@ -1,3 +1,5 @@
+# Update coming soon. Expected update -> 20 May, 2019
+
 # GoogleDorker
 
 This is a simple tool to automate google hacking or simply google dorking.
