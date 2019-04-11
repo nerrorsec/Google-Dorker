@@ -1,9 +1,7 @@
-#Updated > Apr 11, 2019
-
+# Updated > Apr 11, 2019
 If any issues, please ping me.
 
 # GoogleDorker
-
 This is a simple tool to automate google dorking.
 
 # What can it do?
