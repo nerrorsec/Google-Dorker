@@ -16,8 +16,8 @@ It simply looks for,
 8) Publicly exposed documents
 
 # Usage
-#2> pip3 install -r requirements.txt
-#1> python3 GoogleDorker.py (This tool is strictly made in python3)
+#1> pip3 install -r requirements.txt<br>
+#2> python3 GoogleDorker.py (This tool is strictly made in python3)
 
 # Note
 1) If you think I am missing something, please send me feedbacks and comments.
