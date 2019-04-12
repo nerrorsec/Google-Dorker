@@ -1,0 +1,6 @@
+beautifulsoup
+aubprocess
+time
+requests
+re
+optparse
