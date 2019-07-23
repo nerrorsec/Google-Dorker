@@ -1,4 +1,4 @@
-# Some things looks broken, Update coming soon. Expected update Date: July 29, 2019
+# Update coming soon. Some things look broken. Expected update Date: July 25, 2019
 If any issues, please ping me.
 
 # GoogleDorker
