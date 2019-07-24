@@ -1,4 +1,4 @@
-# Update coming soon. Some things look broken. Expected update Date: July 25, 2019
+# Update Date: July 24, 2019
 If any issues, please ping me.
 
 # GoogleDorker
@@ -14,6 +14,7 @@ It simply looks for,
 6) Login pages
 7) SQL errors
 8) Publicly exposed documents
+9) phpinfo()
 
 # Usage
 #1> pip3 install -r requirements.txt<br>
@@ -21,7 +22,7 @@ It simply looks for,
 
 # Note
 1) If you think I am missing something, please send me feedbacks and comments.
-2) Constant use of this tool in very short interval of time can make it to fail for a short period of time.(Talking about Google Captcha). As of the update support for bing is added too.
+2) Constant use of this tool in very short interval of time can make it to fail for a short period of time.(Talking about Google Captcha). As of the update manual mode is added ( use -m or --manual)
 3) The code is not refactored.
 
 # Find me @
