@@ -1,4 +1,3 @@
-beautifulsoup4
 subprocess
 time
 requests
