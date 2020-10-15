@@ -1,7 +1,7 @@
 # Last Update: July 24, 2019
 If any issues, please ping me.
 
-# GoogleDorker
+# Google Dorker
 This is a simple tool to automate google dorking.
 
 # What can it do?
