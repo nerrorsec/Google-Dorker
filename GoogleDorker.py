@@ -1,210 +1,107 @@
-#!usr/bin/env python3
-
-import requests
+#!/usr/bin/env python3
+import argparse
 import re
-import optparse
-import subprocess
-import time
 
 def get_arguments():
-    parser = optparse.OptionParser()
-    parser.add_option("-u", "--url", dest="url", help="Target URL")
-    parser.add_option('-m', '--manual', help="Enables manual mode", action="store_true")
-    (option, arguments) = parser.parse_args()
-    if not option.url:
-        parser.error("[-] Please specify an URL, use --help for more info")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", "--domain", dest="domain", help="Domain")
+    option = parser.parse_args()
     return option
-options =  get_arguments()
-url = options.url
-print("\n\n")
-subprocess.call(["chmod", "777", url + ".html"])
-subprocess.call(["rm", url + ".html"])
-subprocess.call(["clear"])
-print("                        ______                       _         _____                  _                   ")
-print("                       / _____)                     | |       (____ \                | |                  ")
-print("                      | /  ___   ___    ___    ____ | |  ____  _   \ \   ___    ____ | |  _   ____   ____ ")
-print("                      | | (___) / _ \  / _ \  / _  || | / _  )| |   | | / _ \  / ___)| | / ) / _  ) / ___)")
-print("                      | \____/|| |_| || |_| |( ( | || |( (/ / | |__/ / | |_| || |    | |< ( ( (/ / | |    ")
-print("                       \_____/  \___/  \___/  \_|| ||_| \____)|_____/   \___/ |_|    |_| \_) \____)|_|    ")
-print("                                             (_____|                                      By: nerrorsec ")
-print("\n\n")
-f = open(str(url) + ".html", "at")
-f.write(
-    '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"> <title>Results from GoogleDorker by nerrorsec</title> </head> <body><br>')
 
-if options.manual:
-    def manual():
-        global f
-        print("[+]Registering data into the file.\n")
-        time.sleep(2)
-        f.write("<h2>Manual mode - Check the links manually.</h2>")
-        f.write("<br>")
-        f.write('<h2>Possible Directory listing</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+intitle:index.of&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>Possible Configuration files</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+ext:xml+|+ext:conf+|+ext:cnf+|+ext:reg+|+ext:inf+|+ext:rdp+|+ext:cfg+|+ext:txt+|+ext:ora+|+ext:ini&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>Possible Database files</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+ext:sql+|+ext:dbf+|+ext:mdb&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>Possible Log files</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+ext:log&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>Possible Backup and Old files</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+ext:bkf+|+ext:bkp+|+ext:bak+|+ext:old+|+ext:backup&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>Possible Login pages</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+inurl:login&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>Possible SQL Errors</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+intext:%22sql+syntax+near%22+|+intext:%22syntax+error+has+occurred%22+|+intext:%22incorrect+syntax+near%22+|+intext:%22unexpected+end+of+SQL+command%22+|+intext:%22Warning:+mysql_connect()%22+|+intext:%22Warning:+mysql_query()%22+|+intext:%22Warning:+pg_connect()%22&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>Possible Publicly Exposed Documents</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+ext:doc+|+ext:docx+|+ext:odt+|+ext:pdf+|+ext:rtf+|+ext:sxw+|+ext:psw+|+ext:ppt+|+ext:pptx+|+ext:pps+|+ext:csv&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.write('<h2>phpinfo()</h2>')
-        f.write('<a href="https://www.google.com/search?q=site:'+ url +'+ext:php+intitle:phpinfo+%22published+by+the+PHP+Group%22&hl=en">Click Here</a>')
-        f.write("<br>")
-        f.close()
-        print("File successfully created.\n")
-    manual()
 
+############# DORKING ############
+def google_dork(domain):
+    f = open(str(domain) + '_GoogleDorks.html', 'a')
+    f.write(
+        f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"> <title>Google Dorks for {domain}</title> </head> <body><br>')
+
+    f.write("<h3>Results from <a href='https://github.com/nerrorsec/GoogleDorker'>GoogleDorker</a> by <a href='https://github.com/nerrorsec'>nerrorsec</a></h3><br><br>")
+
+    # file extensions
+    f.write('<h4>File Extensions</h4>')
+    url = f"https://www.google.com/search?q=site%3A.{domain}+filetype%3Aphp"
+    f.write(f'<a target="_blank" href="{url}">PHP</a>')
+    f.write("<br>")
+
+    url = f"https://www.google.com/search?q=site%3A.{domain}+filetype%3Aasp"
+    f.write(f'<a target="_blank" href="{url}">ASP</a>')
+    f.write("<br>")
+
+    url = f"https://www.google.com/search?q=site%3A.{domain}+filetype%3Aaspx"
+    f.write(f'<a target="_blank" href="{url}">ASPX</a>')
+    f.write("<br>")
+
+    url = f"https://www.google.com/search?q=site%3A.{domain}+filetype%3Ajsp"
+    f.write(f'<a target="_blank" href="{url}">JSP</a>')
+    f.write("<br>")
+
+    # parameters
+    url = f"https://www.google.com/search?q=site%3A.{domain}+inurl%3A%26"
+    f.write('<h4>Parameters</h4>')
+    f.write(f'<a target="_blank" href="{url}">Parameters</a>')
+    f.write("<br>")
+
+    # Important stuffs
+    f.write('<h4>Interesting Dorks</h4>')
+
+    url1 = f"https://www.google.com/search?q=site%3A.{domain}+intext%3A+%22index+of+%2F%22"
+    f.write(f'<a target="_blank" href="{url1}">Index of /</a>')
+    f.write("<br>")
+
+    url2 = f"https://www.google.com/search?q=site%3A.{domain}+db_password+%3D%3D%3D"
+    f.write(f'<a target="_blank" href="{url2}">db_password ===</a>')
+    f.write("<br>")
+
+    url3 = f"https://www.google.com/search?q=site%3A.{domain}+ext%3Aenv+|+ext%3Alog+|+ext%3Asql+|+ext%3Ayml+|+ext%3Apem+|+ext%3Aini+|+ext%3Alogs+|+ext%3Aibd+|+ext%3Atxt+|+ext%3Aphp.txt+|+ext%3Aold+|+ext%3Akey+|+ext%3Afrm+|+ext%3Abak+|+ext%3Azip+|+ext%3Aswp+|+ext%3Aconf+|+ext%3Adb+|+ext%3Aconfig+|+ext%3Aovpn+|+ext%3Asvn+|+ext%3Agit+|+ext%3Acfg+|+ext%3Aexs+|+ext%3Adbf+|+ext%3Amdb+ext%3Apem+ext%3Apub+ext%3Ayaml+ext%3Azip+ext%3Aasc+ext%3Axls+ext%3Axlsx"
+    f.write(f'<a target="_blank" href="{url3}">Interesting extensions</a>')
+    f.write("<br>")
+
+    # More
+    f.write('<h4>More</h4>')
+
+    url4 = f"https://www.google.com/search?q=site%3A.{domain}+inurl%3Alogin"
+    f.write(f'<a target="_blank" href="{url4}">Possible Login Pages</a>')
+    f.write("<br>")
+
+    url5 = f"https://www.google.com/search?q=site:.{domain}+intext:%22sql+syntax+near%22+|+intext:%22syntax+error+has+occurred%22+|+intext:%22incorrect+syntax+near%22+|+intext:%22unexpected+end+of+SQL+command%22+|+intext:%22Warning:+mysql_connect()%22+|+intext:%22Warning:+mysql_query()%22+|+intext:%22Warning:+pg_connect()%22&hl=en"
+    f.write(f'<a target="_blank" href="{url5}">Possible SQL Errors</a>')
+    f.write("<br>")
+
+    url6 = f'https://www.google.com/search?q=site:.{domain}+ext:php+intitle:phpinfo+"published+by+the+PHP+Group"'
+    f.write(f'<a target="_blank" href="{url6}">phpinfo();</a>')
+    f.write("<br>")
+    f.close()
+
+def vendork(domain):
+    k = f'https://www.{domain}'
+    ke = re.findall('\.\w.*\.', str(k))
+    key = re.findall('\w.*\w', str(ke[0]))
+    keyword = str(key[0])
+
+    f = open(str(keyword) + '_VenDorks.html', 'a')
+    f.write(
+        f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"> <title>Vendor Dorks for {keyword}</title> </head> <body><br>')
+    f.write("<h3>Results from <a href='https://github.com/nerrorsec/GoogleDorker'>GoogleDorker</a> by <a href='https://github.com/nerrorsec'>nerrorsec</a></h3><br><br>")
+    vendors = ["*.atlassian.net", "bitbucket.org", "codepad.co", "codepen.io", "coggle.it", "github.com", "gitter.im",
+               "jsdelivr.net", "libraries.io", "npmjs.com", "npm.runit.com", "papaly.com", "pastebin.com", "prezi.com",
+               "repl.it", "scribd.com", "trello.com"]
+    for x in vendors:
+        url = f"https://www.google.com/search?q=site%3A%22{x}%22+%22{keyword}%22"
+        f.write(f'<a target="_blank" href="{url}">{x}</a>')
+        f.write("<br>")
+
+    inurl_vendors = ["gitlab"]
+    for x in inurl_vendors:
+        url = f"https://www.google.com/search?q=inurl%3A%22{x}%22+%22{keyword}%22"
+        f.write(f'<a target="_blank" href="{url}">{x}</a>')
+        f.write("<br>")
+
+    f.close()
+
+options = get_arguments()
+if options.domain:
+    google_dork(options.domain)
+    vendork(options.domain)
+    print("\n[+] Success. Please check the newly created files.")
 else:
-
-    def process_google():
-        global f
-        print("Dorking via Google")
-        print("\n")
-        f.write("<h1>Results from Google</h1>")
-        f.write("<br>")
-        print ("[#]Checking for Directory listing vulnerabilities")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+intitle:index.of&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible Directory listing</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print ("[#]Checking for Configuration files exposed")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+ext:xml+|+ext:conf+|+ext:cnf+|+ext:reg+|+ext:inf+|+ext:rdp+|+ext:cfg+|+ext:txt+|+ext:ora+|+ext:ini&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible Configuration files</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print ("[#]Checking for Database files exposed")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+ext:sql+|+ext:dbf+|+ext:mdb&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible Database files</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print ("[#]Checking for Log files exposed")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+ext:log&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible Log files</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print ("[#]Checking for Backup and old files")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+ext:bkf+|+ext:bkp+|+ext:bak+|+ext:old+|+ext:backup&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible Backup and Old files</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print ("[#]Checking for Login pages")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+inurl:login&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible Login pages</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print ("[#]Checking for SQL errors")
-
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+intext:%22sql+syntax+near%22+|+intext:%22syntax+error+has+occurred%22+|+intext:%22incorrect+syntax+near%22+|+intext:%22unexpected+end+of+SQL+command%22+|+intext:%22Warning:+mysql_connect()%22+|+intext:%22Warning:+mysql_query()%22+|+intext:%22Warning:+pg_connect()%22&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible SQL Errors</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print("[#]Checking for Publicly exposed documents ")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+ext:doc+|+ext:docx+|+ext:odt+|+ext:pdf+|+ext:rtf+|+ext:sxw+|+ext:psw+|+ext:ppt+|+ext:pptx+|+ext:pps+|+ext:csv&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>Possible Publicly Exposed Documents</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-        print("[#]Checking for phpinfo() ")
-        requesturl = 'https://www.google.com/search?q=site:'+ url +'+ext:php+intitle:phpinfo+%22published+by+the+PHP+Group%22&hl=en'
-        response = requests.get(requesturl)
-        notfound = re.search('\s-\sdid not match any documents.', response.text)
-        captcha = re.search(',\ssolving the above CAPTCHA will let you continue\s', response.text)
-        if notfound:
-            print("[-]No results found\n")
-        elif captcha:
-            print("[-]Captcha triggered. Please try after some time.\n")
-        else:
-            print("[+]Registering data into the file.\n")
-            f.write('<h2>phpinfo()</h2>')
-            f.write('<a href="' + requesturl + '">Click Here</a>')
-            f.write("<br>")
-            f.close()
-
-    process_google()
+    print("\n[-] Usage: python3 GoogleDorker.py -d example.com")
