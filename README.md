@@ -1,8 +1,5 @@
-# Last Update: July 24, 2019
-If any issues, please ping me.
-
 # GoogleDorker
-This is a simple tool to automate google dorking.
+Automate google dorking and more. This tool is a part of my greater private tool. More updates soon.
 
 # What can it do?
 It simply looks for,
@@ -15,15 +12,12 @@ It simply looks for,
 7) SQL errors
 8) Publicly exposed documents
 9) phpinfo()
+10) AND OTHER INTERESTING STUFFS
 
 # Usage
-#1> pip3 install -r requirements.txt<br>
-#2> python3 GoogleDorker.py (This tool is strictly made in python3)
-
-# Note
-1) If you think I am missing something, please send me feedbacks and comments.
-2) Constant use of this tool in very short interval of time can make it to fail for a short period of time.(Talking about Google Captcha). As of the update manual mode is added ( use -m or --manual)
-3) The code is not refactored.
+```bash
+python3 GoogleDorker.py -d example.com
+```
 
 # Find me @
-<a href="https://twitter.com/">Twitter</a>
+<a href="https://twitter.com/nerrorsec">Twitter</a>
