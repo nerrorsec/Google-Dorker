@@ -19,5 +19,10 @@ It simply looks for,
 python3 GoogleDorker.py -d example.com
 ```
 
+# Found a bug?
+- Open an [issue](https://github.com/nerrorsec/GoogleDorker/issues)
+# Found a security issue?
+- Report at [huntr.dev](https://huntr.dev/bounties/disclose/?target=https://github.com/nerrorsec/GoogleDorker)
+
 # Find me @
 <a href="https://twitter.com/nerrorsec">Twitter</a>
