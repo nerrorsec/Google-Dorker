@@ -1,5 +1,5 @@
 # GoogleDorker
-Automate google dorking and more. This tool is a part of my greater private tool. More updates soon.
+Automate google dorking and more. More updates soon.
 
 # What can it do?
 It simply looks for,
