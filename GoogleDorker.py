@@ -126,7 +126,7 @@ def vendork(domain):
     vendors = ["*.atlassian.net", "bitbucket.org", "bitpaste.app", "codebeautify.org", "codepad.co", "codepen.io", "codepad.org", "coggle.it", "codeshare.io", "dotnetfiddle.net", 
                "dpaste.org", "dpaste.com", "github.com", "gitter.im", "heypasteit.com", "hastebin.com", "ideone.com", "ide.geeksforgeeks.org", "jsfiddle.net", "justpaste.it",
                "jsdelivr.net", "jsitor.com", "libraries.io", "npmjs.com", "npm.runit.com", "papaly.com", "pastebin.com", "paste.debian.net", "paste.org", "paste2.org", "pastehtml.com", "phpfiddle.org", "prezi.com",
-               "repl.it", "scribd.com", "snipplr.com", "snipt.net", "slexy.org", "textsnip.com", "trello.com"]
+               "repl.it", "scribd.com", "snipplr.com", "trello.com"]
     for x in vendors:
         url = f"https://www.google.com/search?q=site%3A%22{x}%22+%22{keyword}%22"
         f.write(f'<a target="_blank" href="{url}">{x}</a>')
