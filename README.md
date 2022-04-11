@@ -29,6 +29,7 @@ cd GoogleDorker
 <p align="center">
   <img src="ggdork.png" />
 </p>
+
 ```bash
 python3 GoogleDorker.py -d example.com
 ```
