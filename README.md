@@ -2,10 +2,7 @@
 Automate google dorking that search combinations and extract information about a certain website. More updates soon.
 
 <p align="center">
-  <img src="googledork.png" />
-</p>
-
-<p align="center">
+  <img src="googledork.png"
   <img src="vendork.png" />
 </p>
 
@@ -27,6 +24,10 @@ It simply looks for,
 sudo git clone https://github.com/nerrorsec/GoogleDorker
 cd GoogleDorker
 ```
+
+<p align="center">
+  <img src="ggdork.png" />
+</p>
 
 ## Usage
 ```bash
