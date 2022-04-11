@@ -1,11 +1,6 @@
 # GoogleDorker
 Automate google dorking that search combinations and extract information about a certain website. More updates soon.
 
-<p align="center">
-  <img src="googledork.png"
-  <img src="vendork.png" />
-</p>
-
 # What can it do?
 It simply looks for,
 1) Directory listing vulnerabilities
