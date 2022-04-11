@@ -14,6 +14,12 @@ It simply looks for,
 9) phpinfo()
 10) AND OTHER INTERESTING STUFFS
 
+# Install Dork List
+```bash
+sudo git clone https://github.com/nerrorsec/GoogleDorker
+cd GoogleDorker
+```
+
 # Usage
 ```bash
 python3 GoogleDorker.py -d example.com
