@@ -20,7 +20,7 @@ sudo git clone https://github.com/nerrorsec/GoogleDorker
 cd GoogleDorker
 ```
 
-# Usage
+## Usage
 ```bash
 python3 GoogleDorker.py -d example.com
 ```
