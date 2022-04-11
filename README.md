@@ -1,5 +1,13 @@
 # GoogleDorker
-Automate google dorking and more. More updates soon.
+Automate google dorking that search combinations and extract information about a certain website. More updates soon.
+
+<p align="center">
+  <img src="googledork.png" />
+</p>
+
+<p align="center">
+  <img src="vendork.png" />
+</p>
 
 # What can it do?
 It simply looks for,
