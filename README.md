@@ -14,7 +14,7 @@ It simply looks for,
 9) phpinfo()
 10) AND OTHER INTERESTING STUFFS
 
-# Install Dork List
+# Install GoogleDorker
 ```bash
 sudo git clone https://github.com/nerrorsec/GoogleDorker
 cd GoogleDorker
