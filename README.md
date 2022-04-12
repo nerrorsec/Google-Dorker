@@ -1,5 +1,5 @@
 # GoogleDorker
-Automate google dorking and more. More updates soon.
+Automate google dorking that search combinations and extract information about a certain website. More updates soon.
 
 # What can it do?
 It simply looks for,
@@ -14,15 +14,25 @@ It simply looks for,
 9) phpinfo()
 10) AND OTHER INTERESTING STUFFS
 
-# Usage
+# Install GoogleDorker
+```bash
+sudo git clone https://github.com/nerrorsec/GoogleDorker
+cd GoogleDorker
+```
+
+## Usage
+<p align="center">
+  <img src="ggdork.png" />
+</p>
+
 ```bash
 python3 GoogleDorker.py -d example.com
 ```
 
 # Found a bug?
-- Open an [issue](https://github.com/nerrorsec/GoogleDorker/issues)
+- Please feel free to open an [issue](https://github.com/nerrorsec/GoogleDorker/issues)
 # Found a security issue?
-- Report at [huntr.dev](https://huntr.dev/bounties/disclose/?target=https://github.com/nerrorsec/GoogleDorker)
+- Please feel free to report at [huntr.dev](https://huntr.dev/bounties/disclose/?target=https://github.com/nerrorsec/GoogleDorker)
 
 # Find me @
 <a href="https://twitter.com/nerrorsec">Twitter</a>
