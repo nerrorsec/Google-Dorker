@@ -37,4 +37,4 @@ python3 GoogleDorker.py -d example.com
 # Find me @
 <a href="https://twitter.com/nerrorsec">Twitter</a>
 
-# License under the GNU GPLv3, see (LICENSE)[https://github.com/nerrorsec/GoogleDorker/blob/master/LICENSE] for more information.
+### License under the GNU GPLv3, see [LICENSE](https://github.com/nerrorsec/GoogleDorker/blob/master/LICENSE) for more information.
