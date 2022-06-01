@@ -1,40 +1,29 @@
-# GoogleDorker
-Automate google dorking that search combinations and extract information about a certain website. More updates soon.
+# nDorker
+Automate Dorking Faster and Better than Ever.
 
 # What can it do?
-It simply looks for,
-1) Directory listing vulnerabilities
-2) Configuration files exposed
-3) Database files exposed
-4) Log files exposed
-5) Backup and old files
-6) Login pages
-7) SQL errors
-8) Publicly exposed documents
-9) phpinfo()
-10) AND OTHER INTERESTING STUFFS
+1. Google Dorking
+2. Vendor Dorking
+3. Github Dorking
+4. Shodan Dorking
 
-# Install GoogleDorker
+# Get nDorker
 ```bash
-sudo git clone https://github.com/nerrorsec/GoogleDorker
-cd GoogleDorker
+git clone https://github.com/nerrorsec/nDorker
+cd nDorker
 ```
 
 ## Usage
-<p align="center">
-  <img src="ggdork.png" />
-</p>
-
 ```bash
-python3 GoogleDorker.py -d example.com
+python3 nDorker.py -d example.com
 ```
 
 # Found a bug?
-- Please feel free to open an [issue](https://github.com/nerrorsec/GoogleDorker/issues)
+- Feel free to open an [issue](https://github.com/nerrorsec/nDorker/issues)
 # Found a security issue?
-- Please feel free to report at [huntr.dev](https://huntr.dev/bounties/disclose/?target=https://github.com/nerrorsec/GoogleDorker)
+- Report at [huntr.dev](https://huntr.dev/bounties/disclose/?target=https://github.com/nerrorsec/nDorker)
 
-# Find me @
-<a href="https://twitter.com/nerrorsec">Twitter</a>
+# Get in touch
+<a href="https://www.facebook.com/nslcrew">NSLcrew</a>
 
-### License under the GNU GPLv3, see [LICENSE](https://github.com/nerrorsec/GoogleDorker/blob/master/LICENSE) for more information.
+### Licensed under the GNU GPLv3, see [LICENSE](https://github.com/nerrorsec/GoogleDorker/blob/master/LICENSE) for more information.
