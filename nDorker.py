@@ -96,8 +96,8 @@ options = get_arguments()
 if options.domain and re.match("^((?!-))(xn--)?[a-z0-9][a-z0-9-_]{0,61}[a-z0-9]{0,1}\.(xn--)?([a-z0-9\-]{1,61}|[a-z0-9-]{1,30}\.[a-z]{2,})$", options.domain):
     try:
         dorking(options.domain)
-        print(f"\n[+] Success. Please check the {options.domain} folder.\n")
+        print(f"\n[+] Success. Please check the {options.domain} directory.\n")
     except:
-        print(f"\n[-] Folder '{options.domain}' is already present.\n")
+        print(f"\n[-] Directory '{options.domain}' is already present.\n")
 else:
     print("\n[-] Usage: python3 nDorker.py -d example.com\n")
