@@ -75,7 +75,7 @@ def dorking(domain):
     keyword = str(key[0])
     for dork in list:
         url = f"https://github.com/search?q=%22{keyword}%22+{dork}&type=Code&o=desc&s="
-        f.write(f'<a target="_blank" href="{url}">{dork}</a><br><br>')
+        f.write(f'<a target="_blank" href="{url}">{dork}</a><br>')
     f.write(
         f'<br><br><h2>Organization query</h2><br><br>')
     for dork in list:
