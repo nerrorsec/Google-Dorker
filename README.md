@@ -26,4 +26,4 @@ python3 nDorker.py -d example.com
 ## Get in touch
 <a href="https://www.facebook.com/nslcrew">NSLcrew</a>
 
-### Licensed under the GNU GPLv3, see [LICENSE](https://github.com/nerrorsec/GoogleDorker/blob/master/LICENSE) for more information.
+### Licensed under the MIT License, see [LICENSE](https://github.com/nerrorsec/nDorker/blob/master/LICENSE) for more details.
